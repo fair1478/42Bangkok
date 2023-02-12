@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script>
+        let result
+        function calculate() {
+            let leftOp = parseFloat(document.getElementById("leftValue").value)
+            let rightOp = parseFloat(document.getElementById("rightValue").value)
+            let op = document.getElementById("operators").value;
+            if ((leftOp >= 0) && (rightOp >= 0)) {
+                if (op == "+") {
+                    result = leftOp + rightOp
+                }
+                else if (op == "-") {
+                    result = leftOp - rightOp
+                }
+                else if (op == "*") {
+                    result = leftOp * rightOp
+                }
+                else if ((op == "/") && (rightOp != 0)) {
+                    result = leftOp / rightOp
+                }
+                else if ((op == "%") && (rightOp != 0)) {
+                    result = leftOp % rightOp
+                }
+                else if ((op == "/" || op == "%") && (rightOp == 0)) {
+                    result = "It’s over 9000!"
+                }
+                console.log(result)
+                alert(result)
+            }
+            else {
+                alert("Error :(")
+            }
+    }
+
+    setInterval(function() {
+        alert("Please, use me...")
+    }, 30000);
+    </script>
+</head>
+<body>
+    <form onsubmit="calculate()">
+        <input type="text" id="leftValue" name="leftValue">
+        <select id="operators" name="operators">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input type="text" id="rightValue" name="rightValue">
+        <input type="submit" value="Try me!">
+    </form>
+</body>
+</html>

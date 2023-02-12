@@ -1,0 +1,19 @@
+body{
+  background: #0a0a23;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:#fff;
+}
+
+select{
+  border:none;
+  padding: 1px 15px;
+  margin-left: 10px;
+  border-radius:80px;
+}
+
+select:focus{
+  outline: red solid 3px;
+}

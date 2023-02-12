@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balloon</title>
+    <script>
+        let width = 200
+        let height = 200
+        function clicked() {
+            // console.log(document.getElementById("ball").style.backgroundColor=="green")
+            if (document.getElementById("ball").style.width < "420px") {
+                width += 10
+                height += 10
+                let newWidth = width.toString()
+                let newHeight = height.toString()
+                document.getElementById("ball").style.width = newWidth + "px";   
+                document.getElementById("ball").style.height = newHeight + "px";
+            }
+            else if (document.getElementById("ball").style.width == "420px") {
+                width = 200
+                height = 200
+                document.getElementById("ball").style.width = "200px";
+                document.getElementById("ball").style.height = "200px";
+            }
+            if (document.getElementById("ball").style.backgroundColor == "red") {
+                    document.getElementById("ball").style.backgroundColor = "green"
+            }
+            else if (document.getElementById("ball").style.backgroundColor == "green") {
+                    document.getElementById("ball").style.backgroundColor = "blue"
+            }
+            else if (document.getElementById("ball").style.backgroundColor == "blue") {
+                    document.getElementById("ball").style.backgroundColor = "red"
+            }
+        }
+        function left() {
+            if (document.getElementById("ball").style.width > "200px") {
+                width -= 5
+                height -= 5
+                let newWidth = width.toString()
+                let newHeight = height.toString()
+                document.getElementById("ball").style.width = newWidth + "px";   
+                document.getElementById("ball").style.height = newHeight + "px";  
+            }
+            if (document.getElementById("ball").style.backgroundColor == "red") {
+                document.getElementById("ball").style.backgroundColor = "blue"
+            }
+            else if (document.getElementById("ball").style.backgroundColor == "green") {
+                document.getElementById("ball").style.backgroundColor = "red"
+            }
+            else if (document.getElementById("ball").style.backgroundColor == "blue") {
+                document.getElementById("ball").style.backgroundColor = "green"
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="ball" onclick="clicked()" onmouseleave="left()" style="width: 200px;height: 200px;background-color: red;border-radius: 50%;cursor: pointer;"></div>
+</body>
+</html>
